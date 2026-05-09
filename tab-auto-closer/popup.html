@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tab Auto Closer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tab Auto Closer</h1>
+      <label class="toggle">
+        <input type="checkbox" id="enabledToggle" />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <section class="setting-section">
+      <label class="setting-label" for="thresholdInput">
+        非アクティブ閾値
+      </label>
+      <div class="threshold-row">
+        <input
+          type="number"
+          id="thresholdInput"
+          min="0.5"
+          max="168"
+          step="0.5"
+        />
+        <span class="unit">時間</span>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stat">
+        <span class="stat-label">総タブ数</span>
+        <span class="stat-value" id="totalTabs">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">監視対象</span>
+        <span class="stat-value" id="watchedTabs">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">閉じる予定</span>
+        <span class="stat-value warning" id="soonTabs">—</span>
+      </div>
+    </section>
+
+    <div class="save-row">
+      <button id="saveBtn">保存</button>
+      <span class="saved-msg" id="savedMsg">保存しました</span>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

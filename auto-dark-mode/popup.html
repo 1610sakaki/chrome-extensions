@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Auto Dark Mode</h1>
+    </header>
+
+    <div class="settings">
+      <div class="row">
+        <span class="label">有効</span>
+        <label class="toggle">
+          <input type="checkbox" id="enabled">
+          <span class="thumb"></span>
+        </label>
+      </div>
+
+      <div class="row">
+        <span class="label">強度</span>
+        <div class="slider-wrap">
+          <input type="range" id="filterStrength" min="10" max="100" step="5">
+          <span id="strengthValue">100%</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <span class="label">ネイティブ対応でも適用</span>
+        <label class="toggle">
+          <input type="checkbox" id="forceMode">
+          <span class="thumb"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="exclude-section">
+      <div class="exclude-header">
+        <span class="label">除外サイト</span>
+        <button id="btnToggleExclude" class="btn-exclude">このサイトを除外</button>
+      </div>
+      <p id="currentHostname" class="hostname">-</p>
+      <ul id="excludedList"></ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
